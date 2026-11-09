@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D&amp;D Badge Flasher</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10.1.0/dist/web/install-button.js?module"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: #16121f; color: #eee; font-family: system-ui, sans-serif;
+    }
+    main { max-width: 420px; padding: 24px 16px; text-align: center; }
+    h1 { margin: 0 0 8px; font-size: 1.8rem; }
+    p { color: #bbb; line-height: 1.5; }
+    ol { text-align: left; color: #ccc; line-height: 1.7; padding-left: 1.2em; }
+    esp-web-install-button { display: inline-block; margin: 20px 0; }
+    esp-web-install-button button {
+      padding: 14px 28px; font-size: 1.1rem; font-weight: 700; border: 0;
+      border-radius: 10px; background: #b33a3a; color: #fff; cursor: pointer;
+    }
+    .warn { background: #3a2a1a; color: #f0c890; padding: 12px; border-radius: 8px; }
+    small { color: #777; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>&#9876; D&amp;D Badge</h1>
+    <p>Flash the latest badge firmware straight from your browser.</p>
+
+    <esp-web-install-button manifest="manifest.json">
+      <button slot="activate">Connect &amp; flash</button>
+      <span slot="unsupported" class="warn">
+        Your browser can't do this. Use Chrome or Edge on a computer.
+      </span>
+      <span slot="not-allowed" class="warn">
+        This page needs to be opened over HTTPS.
+      </span>
+    </esp-web-install-button>
+
+    <ol>
+      <li>Plug the badge in with a USB data cable.</li>
+      <li>Click <b>Connect &amp; flash</b> and pick the badge's serial port.</li>
+      <li>Choose <b>Install</b>. Tick <b>Erase device</b> for a clean wipe.</li>
+      <li>Wait for it to finish, then unplug. Next badge!</li>
+    </ol>
+
+    <p><small>If no port shows up, you may need the CP210x or CH340 USB driver,
+      or hold the BOOT button while clicking connect.</small></p>
+    <p><small>Firmware v0.1.0</small></p>
+  </main>
+</body>
+</html>
