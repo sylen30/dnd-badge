@@ -1,6 +1,8 @@
 .pio/
 .vscode/
 build/
-*.bin
 *.elf
 .DS_Store
+# Build output is ignored, but the web flasher needs its .bin files:
+*.bin
+!docs/**/*.bin
