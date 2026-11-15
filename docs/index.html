@@ -27,9 +27,11 @@
 <body>
   <main>
     <h1>&#9876; D&amp;D Badge</h1>
-    <p>Flash the latest badge firmware straight from your browser.</p>
+    <p><b>LED test.</b> Flashes the board's LED once a second so you can check
+      flashing works. On the badge it also cycles the LED ring red, green, blue.</p>
+    <p><small>Works with ESP8266 (badge / ESP-12F), ESP32, ESP32-S3 and ESP32-C3.</small></p>
 
-    <esp-web-install-button manifest="manifest.json">
+    <esp-web-install-button manifest="led-test/manifest.json">
       <button slot="activate">Connect &amp; flash</button>
       <span slot="unsupported" class="warn">
         Your browser can't do this. Use Chrome or Edge on a computer.
@@ -48,7 +50,11 @@
 
     <p><small>If no port shows up, you may need the CP210x or CH340 USB driver,
       or hold the BOOT button while clicking connect.</small></p>
-    <p><small>Firmware v0.1.0</small></p>
+    <p><small><b>Badge:</b> if it says it can't connect, short the two
+      <b>prog</b> pads (J5 and J6) while you power it on, then click connect.
+      That puts the ESP8266 into flashing mode.</small></p>
+    <p><small>After flashing, <b>Logs &amp; Console</b> shows "blink: on / off" every half second.</small></p>
+    <p><small>LED test v0.2.0</small></p>
   </main>
 </body>
 </html>
